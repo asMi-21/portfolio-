@@ -1,0 +1,2282 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+html{
+    font-size: 16px;
+    max-width: 100%;
+}
+*{
+    box-sizing: border-box;
+}
+main{
+    text-align: center;}
+
+.bluelogo{
+  position: fixed;
+}
+
+.pickup {
+  text-align: center;
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  padding: 40px 20px;
+  border-radius: 20px;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  background-image: linear-gradient(90deg, rgba(226, 207, 255, 1), rgba(251, 253, 191, 1));
+}
+.pickup h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+.pickup-items {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.pickup-item {
+  width: 200px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+.pickup-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.pickup-item:hover {
+  transform: scale(1.03);
+}
+.pickup-item p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* 中央2枚だけ縦並びにするためのクラス */
+.pickup-center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+
+/* お問い合わせボタン（シンプルで統一されたデザイン） */
+.btn-simple {
+  background: #f2d974;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-simple:hover {
+  background: #f9eebc;
+  transform: translateY(-2px);
+}
+
+.item {
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+h2{
+    text-align: center;
+    font-size: 1.5rem;
+    
+  
+  }
+h3{
+  text-align: center;
+  border-bottom: solid 2px #555 ;
+  font-size: 1.5rem;
+}
+/* =============== Navigation =============== */
+.main-nav,
+.second-nav{
+  margin: 20px 0;
+  background: none;
+  text-align: center;
+}
+
+
+
+.main-nav li,
+.second-nav li{ margin:0; padding:0; }
+
+/* 共通ボタン */
+.nav-btn{
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:30px;
+  font-family:'Zen Maru Gothic',;
+  font-weight:bold;
+  text-decoration:none;
+  transition:.3s;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+/* メインナビ（黄色） */
+.main-nav .nav-btn{
+  background:#f2d974;
+  color:#333;
+}
+.main-nav .nav-btn:hover{
+  background:#f9f1c8; transform:scale(1.05);
+}
+
+/* 作品ページ内ナビ（グリーン） */
+.second-nav .nav-btn{
+  background:#8fd4c0;
+  color:#064b43;
+}
+.second-nav .nav-btn:hover{
+  background:#b5e6d8; transform:translateY(-2px);
+}
+
+/* モバイル */
+@media(max-width:600px){
+  .main-nav ul,
+  .second-nav ul{
+    flex-direction:column;
+    gap:12px;
+  }
+  .nav-btn{ width:80%; }
+}
+.nav-btn:hover{ transform: translateY(-2px) scale(1.03); }
+
+/* ---------- 所属ページの本文用リストだけ背景色を付けたい場合 ---------- */
+/* 例：<ul class="content-list">…</ul> と HTML にクラスを付けて使う */
+ul.content-list{
+  margin:20px 30px;
+  background:darkkhaki;
+  padding:20px;
+}
+
+
+.collection{
+    background-image: url(images/books3.jpg);
+    background-position: center;
+    color:#fff;
+    text-align: center;
+    padding: 300px;
+    
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2), /* 弱い白光り */
+                
+                 1px 1px 2px rgba(0, 0, 0, 0.2); /* わずかな黒い影で立体感を出す */
+}
+/* shelf.html の MY COLLECTION のフォント設定 */
+h1.collection {
+    font-family: 'Zen Old Mincho', serif;
+    text-shadow:  0 0 6px rgba(255, 255, 255, 0.2);
+    font-size: 4em; /* 必要に応じてサイズを調整してください */
+    margin-top: 0; /* 上部の余白を調整 */
+    margin-bottom: 0; /* 下部の余白を調整 */
+    
+}
+
+
+.worldone{
+    background-color: rgba(242, 236, 227, 0.5);
+    padding:30px;
+    margin: 0 30px;
+    max-width: 100%;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    
+    
+}
+
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+  
+/*プライスカード*/
+.item{
+    max-width: 100%;
+    margin: 10px auto;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+.applepies{
+    text-align: center;
+    padding: 20px;
+    width: 350px;
+    display: block;
+  margin: auto;
+    
+}
+
+img:hover {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /*プライスカードに影響.。消さない。*/
+}
+
+.ticket{
+    padding: 50px;
+    width: 350px;
+    display: block;
+  margin: auto;
+}
+
+.showcase{
+    padding: 20px;
+    width: 600px;
+    border-radius: 30px;
+     display: block;
+  margin: auto;
+}
+
+
+
+
+.item img {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.item img:hover {
+  transform: scale(1.05);
+}
+.fantajia-img {
+  
+  max-width: 600px;
+  margin: 0px auto;
+  display: block;
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.fantajia-img:hover {
+  transform: scale(1.05);
+}
+.sakuhins{
+  background-color: rgba(223, 242, 234, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  
+}
+/* my petsセクション内のイラストとプラン画像の配置用 */
+.pet-illustrations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* 各 illustration-item 間の余白 */
+    padding: 30px 0;
+}
+
+
+/* 各イラスト・プラン画像をまとめるコンテナ */
+.illustration-item {
+    display: flex;
+    flex-direction: column; /* 画像とキャプションを縦に並べる */
+    align-items: center; /* 横方向の中央揃え */
+    text-align: center;
+    width: 280px; /* アイテムの幅を統一 */
+    box-shadow: none; /* 念のため */
+    border-radius: 0; /* 念のため */
+    /* ここに背景色とパディングを追加して、個々の要素を視覚的に区切る */
+    background-color: rgba(255, 255, 255, 0.6); /* 白っぽい半透明の背景 */
+    padding: 20px; /* 内側の余白 */
+    border-radius: 15px; /* 角を少し丸く */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* 影で少し浮き上がらせる */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー効果のため */
+}
+.illustration-item:hover {
+    transform: translateY(-5px); /* ホバーで少し浮き上がる */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* 影を強調 */
+}
+
+/* 丸く表示したいキャラクターイラスト用のスタイル */
+.pet-character-img {
+    width: 200px; /* 幅を調整（必要なら） */
+    height: 200px; /* 高さを調整（必要なら） */
+    object-fit: cover;
+    border-radius: 50%;
+    
+    margin-bottom: 15px; /* キャプションとの間にしっかり余白 */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pet-character-img:hover {
+    transform: translateY(-5px); /* ホバーで少し浮き上がる */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* 影を強調 */
+}
+
+
+/* PI計画の画像用（四角く表示したい） */
+.pi-plan-image {
+    max-width: 100%; /* 親要素の幅に合わせる */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 15px; /* 各画像の下に余白 */
+}
+
+.pi-plan-image:last-of-type {
+    margin-bottom: 15px; /* 最後の画像にも余白を確保 */
+}
+
+
+/* キャプションのスタイル（見やすくするために） */
+.illustration-caption {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.4;
+    max-width: 100%;
+    margin-top: auto; /* 下部に揃えるために追加 */
+    padding-top: 10px; /* キャプションと画像の間に少しパディング */
+}
+
+/* LINE STAMP 画像のスタイル */
+.callduck {
+    max-width: 300px; /* 適度なサイズに調整 */
+    height: auto;
+    display: block; /* 中央寄せのため */
+    margin: 20px auto; /* 上下の余白と中央寄せ */
+    border-radius: 15px; /* 角を少し丸める */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* others セクションの画像スタイル */
+.trace {
+    max-width: 400px; /* 必要に応じてサイズ調整 */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+.family{
+    background-color: rgba(252, 253, 253, 0.61);
+    border-radius: 20px;
+    margin: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    
+}
+.pets{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin:  30px auto;
+    padding: 20px;
+    max-width: 800px;
+    justify-items: center;
+}
+
+
+.callduck{
+    width: 55%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    
+}
+
+
+    
+
+
+.trace{
+    padding: 20px;
+    width: 500px;
+    display: block;
+  margin: auto;
+}
+
+
+
+
+.intro { /* もし .btn が .intro の中にある場合 */
+    
+  text-align: center; /* この行を追加または確認 */
+}
+
+
+/* ボタンを中央配置するための親要素のスタイル */
+/* .btn が .intro の中にあるため、.intro に text-align: center; を適用 */
+.intro {
+    text-align: center; /* この行が重要 */
+    /* 既存の .intro のスタイルがあれば、それに加えてください */
+    font-size: 1.1rem; /* 既存のPタグのスタイルを考慮して、もしあれば調整 */
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 30px auto;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  border: 2px solid #f2d974;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+  background: #f2d974;
+  color: #fff;
+}
+
+.contact-section {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0), rgba(210, 253, 250, 1) 100%, rgba(209, 253, 254, 1));
+
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.contact-guidelines {
+  list-style:none;
+  margin: 0 auto 30px;
+  padding-left: 20px;
+  max-width: 500px;
+  color: #555;
+}
+
+.contact-guidelines li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.contact-btn-wrap {
+  width: 100%;
+  text-align: center;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f2d974;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #f9eebc;
+  transform: translateY(-2px);
+}
+
+.contact-btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* アイコンとボタンの間の余白 */
+  margin-top: 30px;
+}
+
+.contact-icon {
+  width: 80px; /* 好みのサイズに調整可 */
+  height: auto;
+  border-radius: 10px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f2d974;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #f9eebc;
+  transform: translateY(-2px);
+}
+
+/* 背景画像 + オーバーレイ */
+
+#profile-page {
+  background: url("images/frower.jpg") center/cover no-repeat fixed;
+  position: relative;
+  z-index: 0;
+}
+
+#profile-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 245, 230, 0.6);
+  z-index: -1;
+}
+
+
+/* プロフィール全体 */
+.profile-section {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  background-color: rgba(255, 245, 230, 0.4); /* 半透明化 */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* 影は優しめに */
+  backdrop-filter: blur(4px); /* 背景をぼかしてやわらかい印象に */
+}
+
+.profile-inner {
+ 
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.profile-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.profile-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6em;
+}
+
+.profile-list li {
+  margin-bottom: 8px;
+}
+
+.profile-list strong {
+  color: #c67c2e;
+}
+
+
+
+.site-header .header-logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.site-header h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.site-header .tagline {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 8px;
+}
+
+
+.site-header {
+  text-align: center;
+  padding: 40px 20px 20px;  /* 上部を広めに */
+  
+}
+.header-logo {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  margin: 0 0 10px;
+}
+.hero-content .tagline {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 8px;
+}
+
+.main-nav {
+  margin-top: 30px;
+}
+
+.nav-btn {
+  /* ボタンスタイルは変更不要 */
+}
+
+/* レスポンシブ: 縦に並べる例 */
+@media (max-width:600px) {
+  .hero-content h1 { font-size:2rem; }
+  .site-header { padding:30px 10px 10px; }
+}
+
+
+
+.nav-btn {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.nav-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
+  transform: translate(100%, 100%);
+  transition: transform 0.7s ease;
+  opacity: 0;
+}
+
+.nav-btn:hover::after {
+  transform: translate(-10%, -10%);
+  opacity: 1;
+}
+.profile-photo {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.03);
+}
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.hero-title::before {
+  display: none; /* 元の黒オーバーレイは不要なので非表示に */
+}
+
+/* 全ページ共通の背景透過スタイル */
+.page-wrapper {
+  background-color: rgba(255, 255, 255, 0.4); /* 半透明ホワイト */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* 優しい影で浮かせる */
+  backdrop-filter: blur(4px); /* 背景をやわらかくぼかす */
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 80px auto; /* ページ縁から余裕をもって配置 */
+}
+
+
+
+
+/* 丸く表示したいキャラクターイラスト用のスタイル */
+.pet-character-img {
+    width: 240px; /* 正方形にすることで、border-radius: 50%で真円になります */
+    height: 240px;
+    
+    border-radius: 50%; /* これで丸くなります */
+    margin: 10px; /* 周囲の余白 */
+    
+    display: block; /* 中央寄せのためにブロック要素にする */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* PI計画の個々の画像用（四角く表示したい） */
+.pi-plan-image {
+    max-width: 100%; /* 親要素（.pi-plan-item）の幅に合わせる */
+    height: auto;
+    border-radius: 10px; /* 角を少し丸める */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* 影 */
+    margin-bottom: 15px; /* 各画像間の余白 */
+    display: block; /* 中央寄せのため */
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* PI計画の画像群を縦に並べるためのスタイル */
+.pi-plan-item {
+    display: flex;
+    flex-direction: column; /* 内部の画像を縦に並べる */
+    align-items: center; /* 内部の画像を中央揃え */
+    width: 280px; /* 外側の illustration-item の幅を維持 */
+}
+.pi-plan-image:last-of-type { /* 最後の画像の下の余白を調整 */
+    margin-bottom: 10px;
+}
+.pi-plan-image:hover {
+    transform: translateY(-5px); /* ホバーで少し浮き上がる */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* 影を強調 */
+}
+/* キャプションのスタイル（シャドウを確実に除去） */
+.illustration-caption {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.4;
+    max-width: 100%;
+    text-shadow: none; /* テキストのシャドウを確実に除去 */
+    /* 以前あった box-shadow も除去したい場合はここに追加 */
+    box-shadow: none; /* キャプション自体にボックスシャドウがないことを保証 */
+}
+
+/* my petsセクション内の画像全体を中央寄せにしたい場合（参考） */
+.pet-illustrations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* 各 illustration-item 間の余白 */
+    padding: 30px 0;
+}
+
+/* キャプションのスタイル（見やすくするために） */
+.illustration-caption {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 5px;
+    text-align: center;
+    width: 240px; /* 画像の幅に合わせる */
+}
+
+
+
+/* 特に問題の画像（callduckとtrace）に限定して強力に無効化する */
+.callduck, .trace {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+/* もし画像がaタグで囲まれている場合は、aタグ自体にもスタイルを適用 */
+a img {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+/* ========================================= */
+/* === H1 およびボタンの最終調整（ここが最終的に適用されます） === */
+/* ========================================= */
+
+
+
+/* メインロゴ画像の調整 */
+.index-logo {
+    display: block;
+    margin: 30px auto 0;
+    width: 80px;
+    height: auto;
+}
+
+
+
+/* ヒーローサブタイトル（"Webデザイナー志望・武貞麻美"） */
+.hero-subtitle {
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 500;
+}
+
+
+
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* ホバーで少し透明度を上げる */
+    border-color: rgba(0, 0, 0, 0.2); /* ホバーで枠線も少し濃く */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* イントロダクションセクションのテキスト */
+.intro p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    
+    margin: 100px auto;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    text-align: center;
+}
+
+/* 「作品を見る」ボタン */
+
+
+/* 「作品はこちらから」ボタンの最終調整 */
+.btn {
+    display: inline-block;
+    padding: 15px 30px; /* 内側の余白 */
+    border: none; /* 枠線をなくす */
+    background-color:#8fd4c0;
+    color:#064b43;
+    text-decoration: none; /* 下線をなくす */
+    border-radius: 50px; /* これで完全に丸くなるはず */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease; /* ホバー時のアニメーションを滑らかにする */
+    
+    margin-top: 60px; /* 上方向の余白 */
+    margin-bottom:1px; /* 下方向の余白 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    letter-spacing: 0.05em; /* 文字間隔 */
+    cursor: pointer; /* マウスカーソルをポインターに */
+}
+
+/* マウスを乗せたときのスタイル（ホバー効果） */
+.btn:hover {
+    background-color:  #ebedf0; 
+    transform: translateY(-2px); /* 少し浮き上がるように */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* ホバーで影を強調 */
+}
+
+
+/* ピックアップワークス見出し */
+.pickup h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* ピックアップアイテムのキャプションテキスト */
+.pickup-item p {
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 1.4;
+    text-align: center;
+}
+/* ========================================= */
+/* === ヘッダー全体の背景画像設定 === */
+/* ========================================= */
+
+header {
+    /* 既存の背景色とぼかしを上書きまたは追加 */
+
+    background-size: cover; /* コンテナ全体に画像を広げる */
+    background-position: center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+    object-fit: cover;
+    backdrop-filter: blur(1px); /* 背景のぼかし効果 */
+    padding:200px 100px; /* 上下のパディングを増やして画像を広く見せる */
+  
+    margin: 50px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    display: flex; /* Flexboxを使って内容を中央寄せにする */
+    flex-direction: column; /* 縦方向に要素を並べる */
+    justify-content: center; /* 垂直方向の中央揃え */
+    align-items: center; /* 水平方向の中央揃え */
+}
+
+/* メインロゴ画像の調整 */
+.index-logo {
+    display: block;
+    margin: 0 auto 0; /* ヘッダーのflexboxで中央寄せされるため、上下のマージンのみ調整 */
+    width: 80px;
+    height: auto;
+    z-index: 2; /* 他の要素より手前に表示 */
+}
+
+/* ヘッダー全体（h1とその中のspanを含む）の調整 */
+header h1 {
+    font-size: 5em;
+    text-align: center;
+    color: #4A4A4A; /* 必要であれば、文字色を背景に合わせて調整 */
+    margin-top: 50px; /* ロゴとの間隔を調整 */
+    margin-bottom: 50px;
+    line-height: 1.4;
+    z-index: 2; /* 他の要素より手前に表示 */
+}
+
+/* キャッチコピーの日本語部分（"心に残るのは、ほんのひとさじの遊び心"） */
+.fancy-font {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 5rem;
+    color: #FFFFFF; /* 文字色を白に！ */
+    text-shadow:2px 1px #555;
+    z-index: 2; /* 他の要素より手前に表示 */
+}
+
+/* キャッチコピーの英語部分（"A touch of playfulness leaves a lasting smile."） */
+header h1 span:last-child {
+    font-size: 0.8em;
+    color: #F0F0F0;
+    display: block;
+    margin-top: 8px;
+    font-family: 'Zen Old Mincho', serif;
+    font-weight: 300;
+    text-shadow: 1px 1px#555;
+    z-index: 2; /* 他の要素より手前に表示 */
+}
+
+
+
+/* その他の要素（hero-subtitle, intro, pickupなど）は、
+   必要に応じて背景色の調整やマージンの見直しを行ってください。
+   bodyタグの背景画像は、このheaderが優先されるため、
+   bodyには明示的に背景画像を設定しないか、別の画像を設定してください。 */
+
+   /* style.css に以下を追加 */
+
+.profile-intro {
+    display: flex; /* 画像とテキストを横並びにする */
+    align-items: center; /* 縦方向中央揃え */
+    gap: 30px; /* 画像とテキストの間のスペース */
+    max-width: 900px; /* 親要素に合わせて最大幅を設定 */
+    margin: 40px auto; /* 中央寄せと上下の余白（調整推奨） */
+    padding: 20px; /* 必要に応じて内側の余白を追加 */
+    border-radius: 10px; /* 必要に応じて角を丸く */
+    background: repeating-linear-gradient(45deg, rgb(225, 225, 241), rgb(249, 249, 250) 10px, rgb(229, 245, 191) 10px, rgb(196, 224, 236) 20px);
+    background-color: rgba(255, 255, 255, 0.4); /* 背景を半透明にするなど */
+    backdrop-filter: blur(5px); /* 背景のぼかし */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* 影 */
+}
+
+.profile-image {
+    width: 150px; /* 画像の幅 */
+    height: auto; /* 高さ自動調整 */
+    border-radius: 50%; /* 丸く切り抜く */
+    filter: hue-rotate(200deg) grayscale(80%) brightness(1.2); /* 色相を調整して青っぽく、グレースケール、明るさ調整 */
+    object-fit: cover; /* 画像がはみ出さないように調整 */
+    flex-shrink: 0; /* 画像が縮小されないようにする */
+}
+
+.profile-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin: 0; /* デフォルトのp要素のマージンをリセット */
+    flex-grow: 1; /* テキストが残りのスペースを埋めるようにする */
+}
+
+.profile-link {
+    display: block; /* ボタンを単独の行に配置 */
+    padding: 12px 25px;
+    background-color: rgba(255, 255, 255, 0.9); /* リンクの背景色 */
+    color: #555;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px; /* 上の文章からの距離 */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* テキストを中央寄せ */
+    width: fit-content; /* 内容の幅に合わせる */
+    align-self: flex-end; /* flexコンテナ内で右端に寄せる（左寄せならflex-start, 中央ならcenter） */
+}
+
+.profile-link:hover {
+     background-color:  #9bc3f4; 
+    transform: translateY(-2px); /* 少し浮き上がるように */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+   }
+
+
+/* レスポンシブ対応（画面幅が狭い場合は縦に並べる） */
+@media (max-width: 768px) {
+    .profile-intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+  }
+    .profile-image {
+        width: 150px;
+        height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+
+    /* ★ここを調整します★ */
+    /* 以前の filter: hue-rotate(200deg) grayscale(80%) brightness(1.2); */
+    /* 顔色が悪く見える原因の filter を削除するか、より自然な値に調整 */
+    filter: grayscale(20%) brightness(1.05) sepia(5%); /* 例: 少し彩度を落とし、少し明るく、わずかにセピア調にする */
+    /* あるいは、フィルターを完全に削除して元画像の色味を出す場合： */
+    /* filter: none; */
+}
+    
+
+    .profile-link {
+        align-self: center; /* モバイルでは中央寄せ */
+    }
+.profile-subsection-title{
+  text-align: center;
+}
+
+body {
+    background-color: #FFFFFF;
+    margin: 0; /* bodyのデフォルトマージンをリセット */
+    padding: 0; /* bodyのデフォルトパディングをリセット */
+}
+
+/* 全ページ共通の背景透過スタイル（他のページで使用している場合） */
+/* このクラスがHTMLに存在しない場合や、不要であれば削除してください */
+.page-wrapper {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 80px auto;
+}
+
+/* プロフィールページの背景画像とオーバーレイ */
+#profile-page {
+    background: url("images/frower.jpg") center/cover no-repeat fixed;
+    position: relative;
+    z-index: 0;
+}
+
+#profile-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 245, 230, 0.6);
+    z-index: -1;
+}
+
+/* --- ヘッダー関連のスタイル --- */
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px #555;
+}
+
+.hero-title {
+    
+    position: relative;
+    display: inline-block;
+    padding: 150px 100px;
+    border-radius: 20px;
+    z-index: 1;
+    background-color: rgba(255, 245, 230, 0.3);
+    
+}
+
+.hero-content .tagline {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 8px;
+}
+
+.main-nav {
+    margin-top: 30px;
+    z-index: 2;
+}
+
+
+
+.nav-btn {
+    display: block;
+    padding: 12px 25px;
+     /* 元のボタンの色 */
+    border: none; /* 元のボタンのボーダーをなしに */
+    color: #333; /* 元のボタンの文字色 */
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn:hover {
+    background-color: #f9eebc; /* ホバー時の色 */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.profile-subsection {
+    margin-bottom: 40px;
+    text-align: center; /* 元のCSSにある場合は残す */
+}
+
+/* 自己紹介文のコンテナ (.profile-subsection-title)（変更なし） */
+.profile-subsection-title {
+    font-family: 'Zen Maru Gothic', sans-serif; /* もし元のCSSにZen Maru Gothicがない場合は削除 */
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 0;
+    border: none;
+    text-align: center; /* 元のCSSにある場合は残す */
+}
+/* "プロフィール"のh2タグのスタイル（変更なし） */
+.profile-section h2 {
+    font-family: 'Zen Maru Gothic', sans-serif; /* もし元のCSSにZen Maru Gothicがない場合は削除 */
+    font-size: 2.2rem;
+    color: #333;
+    margin-top: 0;
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
+    text-align: center; /* タイトルは中央寄せ */
+    width: 100%; /* 下線が中央に来るように */
+}
+
+.profile-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #08adb9;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- プロフィール画像と情報全体のコンテナ (.profile-inner) --- */
+.profile-inner {
+    display: flex; /* Flexboxコンテナにする */
+    flex-direction: column; /* 要素を縦に並べる */
+    align-items: center; /* 子要素を水平方向の中央に配置 */
+
+    margin-bottom: 40px;
+    padding-top: 40px; /* 必要に応じて調整 */
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+/* プロフィール画像 (.profile-photo) - ここを修正 */
+.profile-photo {
+    border-radius: 20px;
+    object-fit: cover;
+   
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+/* プロフィール情報コンテナ (.profile-info)（変更なし） */
+.profile-info {
+    width: 100%;
+    padding: 0 20px;
+}
+
+
+/* --- スキルカテゴリのスタイル (.skill-category) --- */
+.skill-category {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.skill-category h3 {
+    font-family: 'Zen Maru Gothic', sans-serif; 
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 8px;
+    display: inline-block;
+    text-align: center; 
+    width: 100%; /* 下線が全体に伸びるように */
+}
+
+/* --- リスト（プロフィール、スキル、資格）の共通スタイル --- */
+.profile-list,
+.skill-list,
+.qualification-list {
+    list-style: none; /* デフォルトのリストスタイルを解除 */
+    padding: 0;
+}
+
+.profile-list li,
+.skill-list li,
+.qualification-list li {
+    position: relative;
+    padding-left: 0; /* 左のパディングをリセット */
+    margin-bottom: 10px;
+    /* font-family: 'Zen Maru Gothic', sans-serif; */ /* 元のフォント指定を維持 */
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+
+    text-align: left; /* テキストは左寄せ */
+    width: fit-content; /* 内容の幅に合わせる */
+    margin-left: auto; /* 中央寄せ */
+    margin-right: auto; /* 中央寄せ */
+}
+
+.profile-list li strong,
+.skill-list li strong,
+.qualification-list li strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* リストアイテムの前にアイコン（★）を付ける - 前回の修正を維持 */
+.profile-list li::before,
+.skill-list li::before,
+.qualification-list li::before {
+    content: '★';
+    color: #08adb9;
+    font-weight: bold;
+    display: inline-block; /* インラインブロック要素としてテキストの前に配置 */
+    margin-right: 8px; /* アイコンとテキストの間のスペース */
+    vertical-align: middle; /* テキストと垂直方向の位置を揃える */
+}
+
+
+
+
+
+
+/* --- レスポンシブ対応（変更なし） --- */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 30px 15px 15px;
+        margin: 30px auto;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        padding: 20px 10px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-section {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .profile-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .profile-section h2::after {
+        width: 60px;
+    }
+
+    .profile-subsection-title {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .profile-inner {
+        padding-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 200px;
+        margin-top: 30px;
+       margin-bottom: 1px;
+    }
+
+    .profile-info {
+        padding: 0 15px;
+    }
+
+    .skill-category h3 {
+        font-size: 1.3rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .profile-list li,
+    .skill-list li,
+    .qualification-list li {
+        font-size: 0.95rem;
+        text-align: left; /* モバイル時も左寄せを維持 */
+    }
+
+    
+}
+.main-nav ul {
+
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px;
+    
+   
+    object-fit: cover;
+    flex-wrap: wrap;
+    gap: 15px; /* ボタン間のスペースを維持 */
+    flex-direction: row; /* ★ここをrowに変更し、横並びにする */
+}
+
+.trace-description {
+    font-size: 0.95rem; /* フォントサイズを少し小さめに */
+    color: #555; /* 文字色 */
+    line-height: 1.6; /* 行の高さ */
+    margin-top: 15px; /* 画像からの上部の余白 */
+    margin-bottom: 30px; /* 下部の余白 */
+    text-align: center; /* 中央寄せ */
+    max-width: 500px; /* 説明文の最大幅（適宜調整） */
+    margin-left: auto; /* 中央寄せ用 */
+    margin-right: auto; /* 中央寄せ用 */
+}
+/* ========================================= */
+/* === other セクション内の作品共通スタイル === */
+/* ========================================= */
+.other-item {
+    margin-top: 50px; /* 上部の余白 */
+    margin-bottom: 80px; /* 下部の余白 */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* 背景を少し透明な白に */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 700px; /* 最大幅 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.other-item h3 { /* 各作品の見出し */
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+/* ========================================= */
+/* === ルフィ作品のスタイル（微修正） === */
+/* ========================================= */
+.trace-img { /* ルフィの画像のスタイル */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* trace-description は既存のものをそのまま使用 */
+
+
+/* ========================================= */
+/* === 北海道のほたてフェア作品のスタイル === */
+/* ========================================= */
+.hotate-fair-img { /* ホタテフェアの画像のスタイル */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.hotate-fair-description { /* ホタテフェアの説明文のスタイル */
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================= */
+/* === レスポンシブ対応（共通化） === */
+/* ========================================= */
+@media (max-width: 768px) {
+    .other-item { /* 共通のレスポンシブスタイル */
+        margin-top: 30px;
+        margin-bottom: 60px;
+        padding: 15px;
+    }
+
+    .other-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .trace-description,
+    .hotate-fair-description { /* 説明文のレスポンシブスタイル */
+        font-size: 0.9rem;
+    }
+}/* ========================================= */
+/* ========================================= */
+/* === フッター関連のスタイル（最終最終調整版 - ロゴサイズとHTML対応） === */
+/* ========================================= */
+.site-footer {
+   
+    color: #333;
+    width: 100%; /* 横幅いっぱい */
+    padding: 20px 30px; /* 上下左右のパディング */
+   
+    
+    /* === 配置のためのFlexbox設定 === */
+    display: flex; /* Flexboxを有効にして横並びに */
+    justify-content: space-between; /* 要素を両端と中央に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    box-sizing: border-box; /* paddingがwidthに含まれるように */
+    flex-wrap: wrap; /* 画面が小さいときに折り返す */
+    gap: 10px; /* 要素間の隙間 */
+    margin-top: 60px; /* メインコンテンツとの間隔 */
+}
+
+.site-footer p { /* © 2025 asMi のスタイル */
+    margin: 0;
+    flex-grow: 1; /* 左端に寄せるために、左側の要素としてスペースを占有 */
+    text-align: left; /* 左寄せ */
+}
+
+/* フッター内のリンクホバー時の下線はデフォルトで表示 */
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-buttons {
+    display: flex; /* ボタンを横並びにするため */
+    gap: 10px; /* ボタン間の隙間 */
+    justify-content: center; /* ボタン群自体を中央に寄せる */
+    flex-grow: 1; /* 中央の要素としてスペースを占有 */
+}
+
+.footer-btn { /* フッターのボタン */
+    /* display: inline-block; を削除または inline-flex に変更 */
+    /* inline-flex にすることでアイコンとテキストの配置がより柔軟になります */
+    display: inline-flex; /* 以前の提案に合わせて変更 */
+    align-items: center; /* アイコンとテキストを垂直中央揃え */
+    gap: 8px; /* アイコンとテキストの間隔 */
+
+    background-color: #f2d974; /* あなたの元のボタン色 */
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ボタンに影を追加 */
+}
+
+.footer-btn:hover {
+    background-color: #f9eebc; /* あなたの元のホバー色 */
+    transform: translateY(-2px);
+    text-decoration: none; /* ホバー時の下線を消す */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+}
+
+.footer-logo {
+    width: 18px !important; /* !!!強制的にサイズを適用!!! */
+    height: auto; /* 高さは自動調整 */
+    margin: 0;
+    flex-grow: 1; /* 右端に寄せるために、右側の要素としてスペースを占有 */
+    text-align: right; /* 右寄せ */
+    /* opacityは指定しない（色を薄くしないため） */
+}
+
+
+/* ========================================= */
+/* === レスポンシブ対応 === */
+/* ========================================= */
+@media screen and (max-width: 600px) {
+    /* フッター */
+    .site-footer {
+        flex-direction: column; /* 要素を縦に並べる */
+        gap: 8px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+    .site-footer p,
+    .footer-buttons,
+    .footer-logo {
+        text-align: center; /* モバイルではすべて中央寄せ */
+        flex-grow: 0; /* スペース占有を解除 */
+        width: 100%; /* 幅を100%に */
+    }
+    .footer-buttons {
+        flex-direction: column; /* ボタンも縦並びにする */
+        gap: 10px;
+    }
+    .footer-logo {
+        width: 18px; /* モバイルでもロゴサイズを維持 */
+        height: auto;
+        text-align: center; /* モバイルでは中央寄せ */
+    }
+}/* ========================================= */
+/* === レスポンシブ対応 === */
+/* ========================================= */
+
+/* 768px以下の画面サイズ（タブレット向け） */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 15px; /* 基本フォントサイズを少し小さく */
+    }
+
+    /* ナビゲーションの調整 */
+    .main-nav ul,
+    .second-nav ul {
+        flex-direction: column; /* ナビ項目を縦に並べる */
+        gap: 10px; /* 項目間の隙間 */
+        align-items: center; /* 中央揃え */
+    }
+
+    .nav-btn {
+        padding: 10px 20px; /* ボタンのパディング調整 */
+        font-size: 0.9em;
+    }
+
+    /* ピックアップセクションの調整 */
+    .pickup {
+        margin: 40px auto; /* 上下のマージンを調整 */
+        padding: 30px 15px; /* パディングを調整 */
+    }
+
+    .pickup h2 {
+        font-size: 1.6rem;
+    }
+
+    .pickup-items {
+        gap: 30px; /* 項目間の隙間を調整 */
+    }
+
+    .pickup-item {
+        width: 45%; /* 2列表示にする（調整可能） */
+    }
+
+    /* その他の画像やコンテンツの調整 */
+    .sakuhins {
+        padding: 0 15px; /* 左右のパディングを追加 */
+    }
+    .sakuhins img {
+        max-width: 100%; /* 画像が親要素からはみ出さないように */
+        height: auto;
+    }
+
+    /* フッターの調整 */
+    .site-footer {
+        flex-direction: column; /* フッター要素を縦に並べる */
+        align-items: center; /* 中央揃え */
+        gap: 15px;
+        padding: 20px;
+    }
+    .footer-buttons {
+        justify-content: center; /* ボタン群を中央に寄せる */
+        width: 100%; /* 幅をいっぱいに使う */
+    }
+    .footer-logo {
+        text-align: center; /* ロゴを中央に寄せる */
+    }
+}
+
+/* 600px以下の画面サイズ（スマートフォン向け） */
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 14px; /* モバイルでの基本フォントサイズ */
+    }
+
+    /* トップレベルの見出しの調整 */
+    h1.collection {
+        font-size: 2rem; /* h1を小さく */
+        padding: 15px;
+    }
+
+    /* ナビゲーションをさらに調整 */
+    .main-nav ul,
+    .second-nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .nav-btn {
+        width: 90%; /* ボタンの幅を広くする */
+        margin: 0 auto;
+        font-size: 1em;
+    }
+
+    /* ピックアップセクション */
+    .pickup {
+        margin:  0 auto;
+        padding: 20px 10px;
+        border-radius: 10px;
+        
+    }
+    .pickup h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    .pickup-items {
+        flex-direction: column; /* 1列表示に */
+        gap: 20px;
+    }
+    .pickup-item {
+        width: 90%; /* 項目をほぼ全幅に */
+        max-width: 300px; /* 最大幅を設定して、大きくなりすぎないように */
+        margin: 0 auto; /* 中央揃え */
+    }
+    .pickup-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* その他のコンテンツ（.sakuhinsなど） */
+    .sakuhins {
+        padding: 0 10px;
+    }
+    .sakuhins h2, .sakuhins h3 {
+        font-size: 1.3rem; /* 見出しのフォントサイズ調整 */
+    }
+    .sakuhins p {
+        font-size: 0.9em;
+    }
+    .trace {
+        max-width: 80%; /* トレース画像を少し小さく */
+        margin: 0 auto;
+        display: block; /* 中央寄せのため */
+    }
+
+    /* フッター */
+    .site-footer {
+        padding: 15px;
+    }
+    .footer-buttons {
+        flex-direction: column; /* フッターボタンを縦に並べる */
+        gap: 8px;
+    }
+}@media screen and (max-width: 600px) {
+    /* 以前のレスポンシブCSSに加えて、以下を調整します */
+
+    /* 全ての画像が親要素からはみ出さないようにする */
+    img {
+      text-align: center;
+        max-width: 100%;
+        height: auto;
+        display: block; /* ブロック要素にして、margin: auto で中央寄せしやすくするため */
+    }
+
+    /* .sakuhins セクション内の画像（hokuhoku.jpgなど）に特に適用 */
+    .sakuhins .hokuhoku-work img, /* hokuhoku-work 内の画像（もしあれば） */
+    .sakuhins img { /* sakuhins 内の一般的な画像 */
+        max-width: 95%; /* 画面端に少し余白を持たせる */
+        margin: 0 auto 20px auto; /* 中央寄せと下部マージン */
+    }
+
+    /* 問題の「りんごのおいしさ、まるごと。」画像に特定のクラスがあれば、それも対象に */
+    /* もしこの画像に特定のクラス（例: .apple-image）があれば、以下のように追加 */
+    /* .apple-image {
+        max-width: 95%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    } */
+
+    /* .sakuhins 内部のコンテンツブロックの幅を調整 */
+    .sakuhins > div { /* .sakuhins の直下にあるdiv要素（例: hokuhoku-workなど） */
+        width: 95%; /* 画面幅の95%に設定 */
+        margin: 0 auto 30px auto; /* 中央寄せと下部マージン */
+        padding: 15px; /* 内側の余白 */
+        box-sizing: border-box; /* パディングを含めて幅を計算 */
+    }
+    
+    /* ホタテフェアチラシのテキスト部分の調整（もし画像の隣にあるなら） */
+    .hokuhoku-work p {
+        font-size: 0.9em;
+        padding: 0 10px; /* テキストの左右パディング */
+    }
+}
+
+
+
+/* bodyの初期設定 */
+body {
+    margin: 0; /* bodyのデフォルトマージンをなくす */
+    overflow-x: hidden; /* 横スクロールバーが出ないように */
+}
+
+/* egeyamasky2.jpg を画面上部いっぱいに広げる要素 */
+.main-background { /* headerタグに付けた新しいクラス */
+    width: 100vw;       /* ビューポートの幅いっぱいに広げる */
+    height: 100vh;      /* ビューポートの高さいっぱいに広げる */
+    background-image: url('images/egeyamasky2.jpg'); /* 背景画像を設定 */
+    background-size: cover; /* 画像が要素全体を覆うように拡大・縮小 */
+    background-position: center center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    position: relative; /* 子要素の絶対配置の基準にするため */
+    z-index: 0;         /* 他のコンテンツより下に配置 */
+    /* 背景画像上のh1のテキストスタイル */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    display: flex; /* h1を中央寄せにするためにflexboxを使用 */
+    flex-direction: column;
+    justify-content: center; /* 垂直方向中央寄せ */
+    align-items: center; /* 水平方向中央寄せ */
+    text-align: center; /* テキストを中央寄せ */
+}
+
+
+/* minimni.bruelogo.png （スクロールしても左に固定） */
+.bluelogo {
+    position: fixed; /* 画面に固定 */
+    top: 60px;       /* 画面上からの位置（必要に応じて調整） */
+    left: 10px;      /* 画面左からの位置（必要に応じて調整） */
+    z-index: 100;    /* 最前面に表示 */
+    width: 80px; /* ロゴのサイズを調整（例） */
+    height: auto;
+}
+
+/* ナビゲーション (egeyamasky2.jpgの上に乗って、右に配置) */
+.main-nav {
+    position: fixed; /* 画面に固定 */
+    top: 30px;       /* 画面上からの位置（必要に応じて調整） */
+    right: 20px;     /* 画面右からの位置 */
+    
+    z-index: 99;     /* minimni.bruelogo.pngよりは下、背景画像よりは上 */
+    background: transparent; /* 背景を透明に */
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: flex-end; /* 項目を右寄せ */
+    list-style: none;
+    margin: 0;
+    padding: 0; /* 親要素のパディングで調整するので、ulは0 */
+}
+
+.main-nav li {
+    margin-left: 10px; /* 項目間のマージン */
+}
+
+/* mainコンテンツがヘッダーの下に隠れないように調整 */
+main {
+    margin-top: 100px; 
+    position: relative; /* z-indexが効くように */
+    z-index: 1; /* 背景画像より上に来るように */
+}
+
+.main-background h1 span {
+    display: block; /* 各行をブロック要素にする */
+    margin-bottom: 5px;
+}
+.main-background h1 span:last-child {
+    font-size: 1.2rem; /* 下の行の文字サイズを調整 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+/* 既存の .bluelogo のposition: fixed; 以外のスタイルはそのまま残してOK */
+/* もし以前のbluelogoにwidth: 1px !important; のような指定があれば削除してください */
+
+/* second-nav の基本スタイル */
+.second-nav {
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    text-align: center; /* ulを中央寄せにするため */
+    margin: 30px; /* 上下のマージンを調整 */
+    padding: 0 10px; /* 左右のパディングでコンテンツの端を調整 */
+    box-sizing: border-box; /* パディングを含めて幅を計算 */
+}
+
+.second-nav ul {
+    display: flex; /* Flexboxを有効にして横並びにする */
+    justify-content: center; /* 項目を中央に寄せる */
+    flex-wrap: wrap; /* 項目数が多い場合や画面が小さい場合に折り返す */
+    list-style: none; /* リストの点を消す */
+    margin: 0; /* デフォルトマージンをリセット */
+    padding: 0; /* デフォルトパディングをリセット */
+    gap: 15px; /* 項目間の隙間を設定 */
+}
+
+.second-nav li {
+    margin: 0; /* liのデフォルトマージンをリセット */
+}
+
+.second-nav .nav-btn {
+    display: inline-block; /* ボタンとして機能させるため */
+    padding: 8px 15px; /* ボタンの内側の余白 */
+    white-space: nowrap; /* テキストの折り返しを防ぎ、文字が収まるサイズにする */
+    /* width: auto; はデフォルトで適用されるので不要 */
+    /* 既存の .nav-btn の色、フォント、背景、ボーダーなどはそのまま維持されます */
+}
+
+
+/* レスポンシブ対応 (max-width: 768px と max-width: 600px) 内での調整 */
+/* 既存の @media ブロック内に以下の調整を加えてください。
+   もしこれらのメディアクエリ内に second-nav ul li a などに
+   width: 100%; や flex-direction: column; のような指定があれば、
+   このコードで上書きするか、削除してください。 */
+
+@media screen and (max-width: 768px) {
+    .second-nav ul {
+        gap: 8px; /* タブレットサイズで少し隙間を小さく */
+    }
+    .second-nav .nav-btn {
+        padding: 6px 12px; /* 少しパディングを小さく */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .second-nav ul {
+        gap: 6px; /* スマホサイズでさらに隙間を小さく */
+    }
+    .second-nav .nav-btn {
+        padding: 5px 10px; /* スマホサイズでさらにパディングを小さく */
+        font-size: 0.9em; /* 文字サイズを少し小さくする（必要であれば、既存のフォントサイズ指定を尊重します） */
+    }
+}
+.pickup {
+        margin:  0 auto;
+        padding: 20px 10px;
+        border-radius: 10px;
+        
+    }
+
+.portfolio-item {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  
+}
+
+
+
+.role {
+  font-weight: bold;
+  color: #555;
+  margin-top: -1rem;
+}
+
+.description {
+  margin: 1.5rem 0;
+}
+
+.responsibilities {
+  list-style:none;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-meta p {
+  margin: 0.3rem 0;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.logo-box img.company-logo {
+  width: 80px;
+  height: auto;
+}
+
+.site-link {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+/* 通常の画像より少し小さめに調整 */
+.porrtfolio-img {
+  max-width: 250px;
+}
+
+
+.btn-line {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  background-color: #00c300; /* LINEカラー */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 60px;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+.btn-line:hover {
+  background-color: #00a100;
+}
+
+
+
+
+/* PETsセクション用CSS — Shelf全体に統一 */
+
+.portfolio-item {
+ 
+  margin: 3rem auto;
+  padding: 2rem;
+  
+}
+
+.portfolio-img,
+.pet-character-img,
+.pi-plan-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin: 1.5rem auto;
+  display: block;
+  border-radius: 8px;
+  
+}
+
+.portfolio-img.small-img {
+  max-width: 350px;
+  width: auto;
+}
+
+
+.illustration-caption {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.pet-illustrations {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sakuhin-details {
+  margin-top: 3rem;
+}
+
+.sakuhin-details h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.sakuhin-details p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.tools-used {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .portfolio-item {
+    padding: 1.5rem 1rem;
+  }
+  .pet-illustrations {
+    gap: 1.5rem;
+  }
+}
+
+
+
+/* -OTHERS- セクション用 */
+
+.others-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  font-family: 'Yu Mincho', serif;
+}
+
+.others-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.others-section h3 {
+  font-size: 1.4em;
+  margin: 1rem 0 0.5rem;
+  color: #444;
+}
+
+.others-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.others-img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 2rem auto 1rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.tools-used {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 768px) {
+  .others-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .others-section h2 {
+    font-size: 1.5em;
+  }
+
+  .others-section h3 {
+    font-size: 1.2em;
+  }
+
+  .others-img {
+    width: 100%;
+    margin: 1.5rem auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pickup-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pickup-item {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .pickup-center {
+    gap: 16px;
+  }
+
+  .pickup h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .pickup {
+    padding: 30px 15px;
+  }
+}
+
+
+
+.main-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 80px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 1.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.sub-text {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 1.5s ease-out forwards;
+  animation-delay: 1.2s;
+  color: #333;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.main-title {
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 80px;
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  animation: scaleFadeIn 1.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes scaleFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.main-title {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* グレーの影 */
+}
+
+.sub-text {
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 少し控えめな影 */
+}
+
+.portfolio-img.natsumatsuri {
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+}
+
+
+/* ==== 以下を style.css の一番下に追加 ==== */
+
+/* 画面幅が768px以下（タブレット・スマホ） */
+@media screen and (max-width: 768px) {
+  .main-nav ul,
+  .second-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .main-nav ul li,
+  .second-nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-intro {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .profile-image {
+    width: 70%;
+    margin: 0 auto 20px;
+  }
+
+  .btn,
+  .profile-link {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .pickup-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pickup-item img {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .portfolio-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .items {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .items img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .logo-box img,
+  .company-logo {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .footer-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
